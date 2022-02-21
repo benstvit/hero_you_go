@@ -1,4 +1,5 @@
 class Mission < ApplicationRecord
-  belongs_to :user_id
-  belongs_to :hero_id
+  belongs_to :user
+  belongs_to :hero
+  validates %i[start_date end_date status location content title], presence: true
 end
