@@ -15,7 +15,7 @@ class HerosController < ApplicationController
 
   def create
     @hero = Hero.new(hero_params)
-    raise
+
     if @hero.save
       redirect_to hero_path(@hero)
     else
