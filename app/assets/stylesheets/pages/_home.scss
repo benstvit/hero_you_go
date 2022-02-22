@@ -40,11 +40,12 @@
 .hero-rating {
   position: absolute;
   border-radius: 50%;
-  background-color: rgb(36, 36, 36);
-  height: 30px;
-  width: 30px;
+  background-color: #242424;
+  height: 100px;
+  width: 100px;
   margin: 0;
-  border: 1px solid rgb(0, 0, 0);
-  bottom: 10px;
+  border: 1px solid black;
+  bottom: -26px;
   right: 10px;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
 }
