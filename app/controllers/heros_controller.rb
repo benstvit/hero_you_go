@@ -17,6 +17,7 @@ class HerosController < ApplicationController
     @hero = Hero.new(hero_params)
 
     if @hero.save
+      raise
       redirect_to hero_path(@hero)
     else
       render :new
