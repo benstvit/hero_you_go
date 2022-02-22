@@ -10,13 +10,17 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Bebas+Neue&family=Shizuru&display=swap');
+</style>
   </head>
 
   <body>
-    <div class="container">
-      <%= render 'shared/navbar' %>
+    <div class="mid-container">
+      <%= render 'devise/shared/navbar' %>
       <%= yield %>
-      <%= render 'shared/flashes' %>
+      <%= render 'devise/shared/flashes' %>
     </div>
   </body>
 </html>
