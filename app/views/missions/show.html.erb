@@ -13,7 +13,7 @@
     <%= link_to 'Delete Mission', mission_path(@mission), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
   </div>
 </div>
-<div class="collapse" id="collapsemissioncontent">
+<div class="collapse container" id="collapsemissioncontent">
   <div class="card card-body">
     <%= @mission.content %>
   </div>
