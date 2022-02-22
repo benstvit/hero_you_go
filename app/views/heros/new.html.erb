@@ -3,6 +3,7 @@
 <%= simple_form_for [ @user, @hero ] do |f| %>
   <%= f.input :name %>
   <%= f.input :location %>
+  <%# <%= f.input :power, collection: :power %>
   <%= f.input :price %>
   <%= f.submit "Create a hero", class: "btn btn-primary" %>
 <% end %>

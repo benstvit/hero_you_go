@@ -17,7 +17,7 @@ class HerosController < ApplicationController
     @hero = Hero.new(hero_params)
     @hero.user = current_user
     if @hero.save
-      redirect_to heros_path
+      redirect_to hero_path(@hero)
     else
       render :new
     end
@@ -27,6 +27,6 @@ class HerosController < ApplicationController
   end
 
   def hero_params
-    params.require(:hero).permit(:name, :location, :price, :user_id)
+    params.require(:hero).permit(:name, :location, :price, :user_id, :power)
   end
 end
