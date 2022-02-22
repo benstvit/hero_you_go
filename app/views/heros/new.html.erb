@@ -1,8 +1,9 @@
 <p>hello</p>
 <h1>Create a Hero!</h1>
-<%= simple_form_for [ @user, @hero ] do |f| %>
+<%= simple_form_for [ @hero ] do |f| %>
   <%= f.input :name %>
   <%= f.input :location %>
+  <%= f.input :powers, label_method: :power, collection: Power.all, input_html: {multiple: true}, include_hidden: false  %>
   <%= f.input :price %>
   <%= f.submit "Create a hero", class: "btn btn-primary" %>
 <% end %>

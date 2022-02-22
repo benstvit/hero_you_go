@@ -3,3 +3,4 @@
 <ul><% @heroes.each do |hero|%></ul>
       <li><%= hero.name %></li>
     <% end %>
+<p><%= link_to 'Add a super hero', new_hero_path %></p>
