@@ -22,7 +22,8 @@ class HerosController < ApplicationController
     @hero = Hero.new(
       name: params[:hero][:name],
       location: params[:hero][:location],
-      price: params[:hero][:price]
+      price: params[:hero][:price],
+      photo: params[:hero][:photo]
     )
     @hero.user = current_user
 
@@ -41,7 +42,7 @@ class HerosController < ApplicationController
   def edit
   end
 
-  def hero_params
-    params.require(:hero).permit(:name, :location, :price, powers: [])
-  end
+  # def hero_params
+  #   params.require(:hero).permit(:name, :location, :price, powers: [])
+  # end
 end

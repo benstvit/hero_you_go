@@ -5,5 +5,6 @@
   <%= f.input :location %>
   <%= f.input :powers, label_method: :power, collection: Power.all, input_html: {multiple: true}, include_hidden: false  %>
   <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit "Create a hero", class: "btn btn-primary" %>
 <% end %>

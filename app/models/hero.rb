@@ -4,6 +4,7 @@ class Hero < ApplicationRecord
   has_many :powers, through: :hero_powers
   has_many :reviews, dependent: :destroy
   has_many :missions
+  has_one_attached :photo
   validates :price, :location, presence: true
   validates :name, uniqueness: true
 end
