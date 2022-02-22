@@ -14,6 +14,10 @@ class HerosController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     power_ids = params[:hero][:powers]
     @hero = Hero.new(
       name: params[:hero][:name],
@@ -21,6 +25,11 @@ class HerosController < ApplicationController
       price: params[:hero][:price]
     )
     @hero.user = current_user
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
     if @hero.save
       power_ids.each do |power_id|
         power = Power.find(power_id)
@@ -38,5 +47,9 @@ class HerosController < ApplicationController
 
   def hero_params
     params.require(:hero).permit(:name, :location, :price, powers: [])
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
   end
 end
