@@ -16,22 +16,22 @@ ActiveRecord::Schema.define(version: 2022_02_21_161202) do
   enable_extension "plpgsql"
 
   create_table "hero_powers", force: :cascade do |t|
-    t.bigint "powers_id", null: false
-    t.bigint "heros_id", null: false
+    t.bigint "power_id", null: false
+    t.bigint "hero_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["heros_id"], name: "index_hero_powers_on_heros_id"
-    t.index ["powers_id"], name: "index_hero_powers_on_powers_id"
+    t.index ["hero_id"], name: "index_hero_powers_on_hero_id"
+    t.index ["power_id"], name: "index_hero_powers_on_power_id"
   end
 
   create_table "heros", force: :cascade do |t|
     t.string "name"
     t.string "location"
     t.integer "price"
-    t.bigint "users_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["users_id"], name: "index_heros_on_users_id"
+    t.index ["user_id"], name: "index_heros_on_user_id"
   end
 
   create_table "missions", force: :cascade do |t|
@@ -41,12 +41,12 @@ ActiveRecord::Schema.define(version: 2022_02_21_161202) do
     t.string "location"
     t.text "content"
     t.string "title"
-    t.bigint "users_id", null: false
-    t.bigint "heros_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "hero_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["heros_id"], name: "index_missions_on_heros_id"
-    t.index ["users_id"], name: "index_missions_on_users_id"
+    t.index ["hero_id"], name: "index_missions_on_hero_id"
+    t.index ["user_id"], name: "index_missions_on_user_id"
   end
 
   create_table "powers", force: :cascade do |t|
@@ -58,12 +58,12 @@ ActiveRecord::Schema.define(version: 2022_02_21_161202) do
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
     t.text "comment"
-    t.bigint "users_id", null: false
-    t.bigint "heros_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "hero_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["heros_id"], name: "index_reviews_on_heros_id"
-    t.index ["users_id"], name: "index_reviews_on_users_id"
+    t.index ["hero_id"], name: "index_reviews_on_hero_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,11 +80,11 @@ ActiveRecord::Schema.define(version: 2022_02_21_161202) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "hero_powers", "heros", column: "heros_id"
-  add_foreign_key "hero_powers", "powers", column: "powers_id"
-  add_foreign_key "heros", "users", column: "users_id"
-  add_foreign_key "missions", "heros", column: "heros_id"
-  add_foreign_key "missions", "users", column: "users_id"
-  add_foreign_key "reviews", "heros", column: "heros_id"
-  add_foreign_key "reviews", "users", column: "users_id"
+  add_foreign_key "hero_powers", "heros"
+  add_foreign_key "hero_powers", "powers"
+  add_foreign_key "heros", "users"
+  add_foreign_key "missions", "heros"
+  add_foreign_key "missions", "users"
+  add_foreign_key "reviews", "heros"
+  add_foreign_key "reviews", "users"
 end
