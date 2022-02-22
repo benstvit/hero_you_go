@@ -1,11 +1,21 @@
+<div class="container">
 <h1>Here are the details of your mission:</h1>
-<ul>
-    <li>Title: <%= @mission.title %></li>
-    <li>Asigned Hero: <%= @mission.hero.name %></li>
-    <li>Location: <%= @mission.location %></li>
-    <li>Start Date: <%= @mission.start_date %></li>
-    <li>End Date: <%= @mission.end_date %></li>
-    <li>Status: <%= @mission.status %></li>
-    <li>Content: <%= @mission.content %></li>
-</ul>
-<%= link_to 'Edit Details', edit_mission_path(@mission), class: "btn btn-primary" %>
+  <div class="card-product">
+    <%= image_tag "OsirisDC.png", alt: "Osiris I Hero" %>
+    <div class="card-product-infos">
+      <h2><%= @mission.title %></h2>
+      <p><%= @mission.location %> <strong><%= @mission.hero.name %></strong> <%= @mission.start_date %></p>
+    </div>
+    <button class="btn btn-primary mr-1" type="button" data-toggle="collapse" data-target="#collapsemissioncontent" aria-expanded="false" aria-controls="collapsemissioncontent">
+    Display Details
+  </button>
+    <%= link_to 'Edit Details', edit_mission_path(@mission), class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
+    <%= link_to 'Delete Mission', mission_path(@mission), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+  </div>
+</div>
+<div class="collapse" id="collapsemissioncontent">
+  <div class="card card-body">
+    <%= @mission.content %>
+  </div>
+  </div>
+</div>
