@@ -1,19 +1,31 @@
 
-
 <div class="container">
+
   <div class="row">
-    <div class="col-sm">
-      <div class="card-superhero">
-        <%= cl_image_tag @hero.photo.key, height: 300, width: 400, crop: :fill %>
-        <h1><%= @hero.name %></h1>
-        <% @hero.powers.each do |power| %>
-        <h2><%= power.power %></h2>
-       <% end %>
-      </div>
+
+    <div class="col-sm card-hero">
+      <div class='img' style='text-align:center;'> <%= cl_image_tag @hero.photo.key,
+           height: 370, width: 370,
+           :transformation=>[
+           {:aspect_ratio=>"1.0", :gravity=>"face", :width=>0.6, :zoom=>0.7, :crop=>"thumb"},
+           {:radius=>"max"},
+           {:color=>"white", :effect=>"outline"},
+           {:effect=>"shadow"}
+           ]%></div>
+      <h2><%= @hero.name %></h2>
+      <% @hero.powers.each do |power| %>
+      <div class="power"><p><%= power.power %></p></div>
+      <% end %>
     </div>
+
+    <div class="col-sm"></div>
+
     <div class="col-sm">
-      One of three columns
+      <h1><%= @hero.name %></h1>
+      <% @hero.powers.each do |power| %>
+      <h2><%= power.power %></h2>
+      <% end %>
     </div>
-  </div>
     <p><%= link_to 'Results', heros_path %></p>
+  </div>
 </div>
