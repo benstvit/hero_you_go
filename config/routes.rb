@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :heroes do
     resources :missions, only: %i[new create]
   end
-  resources :missions, %i[edit update destroy accept reject show]
+  resources :missions, only: %i[edit update destroy accept reject show]
   resources :reviews, only: [:new]
 end
