@@ -13,6 +13,10 @@ class HerosController < ApplicationController
     @hero = Hero.new
   end
 
+  def top
+    @heros = Hero.where(@hero.rating = 5)
+  end
+
   def create
 
     power_ids = params[:hero][:powers]

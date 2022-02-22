@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgba($color: #ffffff, $alpha: 0.6)
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +9,26 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.sign-in-btn {
+  background-color: #ffd166;
+  border-radius: 35%;
+  padding: 15px 30px;
+  margin: 5px;
+  color: white;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.log-in-btn {
+  background-color:#ef476f;
+  border-radius: 35%;
+  padding: 15px 30px;
+  margin: 5px;
+  color: white;
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 600;
+  text-transform: uppercase;
 }
