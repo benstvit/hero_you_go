@@ -1,2 +1,10 @@
-<h1>Missions#edit</h1>
-<p>Find me in app/views/missions/edit.html.erb</p>
+<h1>Edit you mission:</h1>
+<%= simple_form_for(@mission) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :location %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :status %>
+  <%= f.input :content %>
+  <%= f.submit "Edit mission", class: "btn btn-primary" %>
+<% end %>
