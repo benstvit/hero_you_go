@@ -1,2 +1,11 @@
 <h1>Here are the details of your mission:</h1>
-<p><%= @mission %></p>
+<ul>
+    <li>Title: <%= @mission.title %></li>
+    <li>Asigned Hero: <%= @mission.hero.name %></li>
+    <li>Location: <%= @mission.location %></li>
+    <li>Start Date: <%= @mission.start_date %></li>
+    <li>End Date: <%= @mission.end_date %></li>
+    <li>Status: <%= @mission.status %></li>
+    <li>Content: <%= @mission.content %></li>
+</ul>
+<%= link_to 'Edit Details', edit_mission_path(@mission), class: "btn btn-primary" %>
