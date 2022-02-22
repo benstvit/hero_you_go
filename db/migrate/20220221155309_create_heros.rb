@@ -4,7 +4,7 @@ class CreateHeros < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :location
       t.integer :price
-      t.references :users, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
