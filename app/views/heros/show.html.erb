@@ -1,14 +1,19 @@
+
+
 <div class="container">
-  <div class="row mt-5 card-show">
-  <div class="col-2">
-    <div class="card-superhero">
-      <%= cl_image_tag @hero.photo.key, height: 300, width: 400, crop: :fill %>
-      <h1><%= @hero.name %></h1>
-      <% @hero.powers.each do |power| %>
+  <div class="row">
+    <div class="col-sm">
+      <div class="card-superhero">
+        <%= cl_image_tag @hero.photo.key, height: 300, width: 400, crop: :fill %>
+        <h1><%= @hero.name %></h1>
+        <% @hero.powers.each do |power| %>
         <h2><%= power.power %></h2>
-      <% end %>
+       <% end %>
+      </div>
+    </div>
+    <div class="col-sm">
+      One of three columns
     </div>
   </div>
-  <p><%= link_to 'Results', heros_path %></p>
-</div>
+    <p><%= link_to 'Results', heros_path %></p>
 </div>
