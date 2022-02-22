@@ -18,7 +18,7 @@ class HerosController < ApplicationController
     @hero = Hero.new(
       name: params[:hero][:name],
       location: params[:hero][:location],
-      price:params[:hero][:price]
+      price: params[:hero][:price]
     )
     @hero.user = current_user
 
