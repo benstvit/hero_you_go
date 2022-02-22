@@ -1,5 +1,5 @@
 class MissionsController < ApplicationController
-  before_action :find_mission, only: %i[edit show edit]
+  before_action :find_mission, only: %i[edit show edit destroy]
   def new
     @mission = Mission.new
     @hero = Hero.find(params[:hero_id])
@@ -27,6 +27,11 @@ class MissionsController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @mission.destroy
+    redirect_to root
   end
 
   private
