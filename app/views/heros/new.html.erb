@@ -1,0 +1,7 @@
+<h1>Create a Hero!</h1>
+<%= simple_form_for [ @user, @hero ] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+  <%= f.submit "Create a hero", class: "btn btn-primary" %>
+<% end %>
