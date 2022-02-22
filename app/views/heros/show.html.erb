@@ -1,2 +1,5 @@
 <h1><%= @hero.name %></h1>
 <p>Find me in app/views/heroes/show.html.erb</p>
+<% @hero.powers.each do |power| %>
+ <h2><%= power.power %></h2>
+<% end %>
