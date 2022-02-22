@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%=favicon_link_tag 'favicon.ico'  %>
+
     <title>HeroYouGo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 
     <style>
@@ -17,10 +17,10 @@
   </head>
 
   <body>
-    <div class="mid-container">
-      <%= render 'devise/shared/navbar' %>
-      <%= yield %>
-      <%= render 'devise/shared/flashes' %>
-    </div>
+  <div class="mid-container">
+    <%= render 'shared/navbar' %>
+    <%= yield %>
+    <%= render 'shared/flashes' %>
+  </div>
   </body>
 </html>
