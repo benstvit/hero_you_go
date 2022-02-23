@@ -6,7 +6,9 @@ export default class extends Controller {
 
 var options = {
   strings: ['Their Super Powers...', 'are YOURS !'],
-  typeSpeed: 40
+  typeSpeed: 40,
+  showCursor: false,
+  loop: true
 };
 
 var typed = new Typed('.typed-target', options);
