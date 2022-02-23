@@ -1,5 +1,13 @@
 <div class="container">
-<h1>Welcome to your dashboard <%= current_user.first_name %></h1>
-<br>
-<%= link_to 'Create Hero', new_hero_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
+    <br>
+    <h1>Welcome to your dashboard <%= current_user.first_name %></h1>
+    <h2>User Information:</h2>
+    <ul>
+      <li>First Name: <%= current_user.first_name %></li>
+      <li>Last Name: <%= current_user.last_name %></li>
+      <li>Email: <%= current_user.email %></li>
+      <%= link_to 'Reset Password', edit_user_password_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
+    </ul>
+    <br>
+    <%= link_to 'Create Hero', new_hero_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
 </div>
