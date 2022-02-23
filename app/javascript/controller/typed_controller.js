@@ -1,16 +1,16 @@
 import { Controller } from "@hotwired/stimulus"
-
+import Typed from 'typed.js';
 export default class extends Controller {
-  static targets = [ "name", "output" ]
 
   connect() {
 
-    // var typed = new Typed('.element', {
-    //   strings: ["First sentence.", "Second sentence."],
-    //   typeSpeed: 30
-    // });
 
-    this.outputTarget.textContent =
-      `Hello, ${this.nameTarget.value}!`
+var options = {
+  strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
+  typeSpeed: 40
+};
+
+var typed = new Typed('.element', options);
+    console.log("Hello, Stimulus!", this.element)
   }
 }
