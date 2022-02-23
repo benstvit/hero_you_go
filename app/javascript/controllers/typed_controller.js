@@ -4,13 +4,12 @@ export default class extends Controller {
 
   connect() {
 
-
 var options = {
-  strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
+  strings: ['His powers...', 'are YOURS !'],
   typeSpeed: 40
 };
 
-var typed = new Typed('.element', options);
+var typed = new Typed('.typed-target', options);
     console.log("Hello, Stimulus!", this.element)
   }
 }
