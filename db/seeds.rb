@@ -30,6 +30,8 @@ urls = ['https://cdn.pixabay.com/photo/2017/07/06/18/48/spider-girl-2478975__340
   'https://upload.wikimedia.org/wikipedia/commons/1/1b/Batman_%28black_background%29.jpg',
   'https://static.wikia.nocookie.net/the-scar-chronicles/images/d/d3/Elastigirl.jpg',
   'https://stock.wikimini.org/w/images/3/37/Yoshi.jpg',
+  'https://techieslab.be/assets/images/portraits/niko-f55da65d.png',
+  'http://ekladata.com/tnJnBzwFRJXtzgYfbow3rw9Symk.jpg',
   'https://upload.wikimedia.org/wikipedia/commons/2/29/Cat_Sphynx._Kittens._img_11.jpg',
   'https://www.pointdevue.fr//storage/images/biography_900/official_portaits_of_king_philippe_and_queen_mathilde_of_belgium_0.jpg',
   'https://i.la-croix.com/1400x933/smart/2020/03/25/1201086051/Donald-Trump-manifeste-impatiencedune-conference-presse-Maison-Blanche-mardi-24_0.jpg']
