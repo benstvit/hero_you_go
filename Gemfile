@@ -70,3 +70,7 @@ gem 'devise'
 # Geocode
 
 gem 'geocoder'
+
+# Cloudinary
+gem 'cloudinary', '1.16.0'
+
