@@ -1,6 +1,20 @@
 <h1>Heros#index</h1>
 <p>Find me in app/views/heroes/index.html.erb</p>
-<ul><% @heroes.each do |hero|%></ul>
-      <li><%= hero.name %></li>
-    <% end %>
+
 <p><%= link_to 'Add a super hero', new_hero_path %></p>
+
+<div class="hero-cards">
+<ul><% @heroes.each do |hero|%></ul>
+    <div class="hero-card">
+      <div class="hero-avatar">
+        <img src="" alt="">
+      </div>
+      <div class="hero-description">
+      <li><%= hero.name %></li>
+      <li><%= hero.power %></li>
+      </div>
+      <div class="hero-rating d-flex justify-content-center align-items-center">
+        <%# <p>5⭐ <%= @hero.review.rating %></p> %>
+      </div>
+    <% end %>
+    </div>

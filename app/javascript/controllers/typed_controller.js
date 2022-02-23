@@ -10,6 +10,6 @@ var options = {
 };
 
 var typed = new Typed('.typed-target', options);
-    // console.log("Hello, Stimulus!", this.element)
+
   }
 }
