@@ -2,7 +2,11 @@ class HerosController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @heroes = Hero.all
+    if params[:query].present?
+      @heros = Hero.where(power: params[:query])
+    else
+      @heros = Hero.all
+    end
   end
 
   def show
@@ -11,10 +15,6 @@ class HerosController < ApplicationController
 
   def new
     @hero = Hero.new
-  end
-
-  def top
-    @heros = Hero.where(@hero.rating = 5)
   end
 
   def create

@@ -1,7 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgba($color: #ffffff, $alpha: 0.6)
+  background: rgba($color: #06d6a0, $alpha: 1)
 }
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
@@ -14,19 +15,19 @@
 .sign-in-btn {
   background-color: #ffd166;
   border-radius: 35%;
-  padding: 15px 30px;
-  margin: 5px;
   color: white;
   font-family: 'Bebas Neue', cursive;
   font-weight: 600;
   text-transform: uppercase;
+  padding: 20px auto;
+  margin: 0 10px;
 }
 
 .log-in-btn {
   background-color:#ef476f;
   border-radius: 35%;
-  padding: 15px 30px;
-  margin: 5px;
+  padding: 20px auto;
+  margin: 0 10px;
   color: white;
   font-family: 'Bebas Neue', cursive;
   font-weight: 600;
