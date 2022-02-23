@@ -16,16 +16,6 @@
       </div>
     </div>
     </div>
-    <%# <div class="search-bar">
-    <div class="container justify-content-center">
-    <div class="row">
-        <div class="col-12">
-            <div class="input-group mb-3"> <input type="text" class="form-control input-text " placeholder="Type in the power you're looking for..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <div class="input-group-append"> <button class="btn btn-outline-primary btn-lg" type="button"><i class="fa fa-search"></i></button> </div>
-            </div>
-        </div>
-    </div>
-    </div> %>
   </div>
   </div>
 
@@ -38,8 +28,8 @@
       <div class="hero-avatar d-flex justify-content-center align-items-end">
         <%# <%= cl_image_tag(hero.photo.key, :crop=>'fill') %>
         <div class="hero-description">
-          <h2><%= hero.name %></h2>
-          <%# <h2><%= hero.power %></h2> %>
+          <h2><%= link_to hero.name, hero_path(hero) %></h2>
+          <%# <h2><%= hero.power %></h2>
         </div>
       </div>
       <div class="hero-rating d-flex justify-content-center align-items-center">

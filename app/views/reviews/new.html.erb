@@ -1,2 +1,8 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
+<div class="p-4">
+  <h1>Give a review for this mission</h1>
+  <%= simple_form_for([@hero, @review]) do |f| %>
+    <%= f.input :comment, as: :text %>
+    <%= f.input :rating, collection: 1..5 %>
+    <%= f.submit "Review this Hero", class: "btn btn-primary" %>
+  <% end %>
+</div>
