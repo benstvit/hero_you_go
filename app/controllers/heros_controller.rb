@@ -3,7 +3,7 @@ class HerosController < ApplicationController
 
   def index
     if params[:query].present?
-      @heros = Hero.where(power: params[:query])
+      @heros = Hero.where("power ILIKE ?", "%#{params[:query]}%")
     else
       @heros = Hero.all
     end

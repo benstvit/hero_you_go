@@ -2,8 +2,9 @@
   background-color: #06d6a0;
   width: 100%;
   display: flex;
-  align-items: start;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
   flex-wrap: wrap;
   height: 250px;
   padding: 20px;

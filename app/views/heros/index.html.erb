@@ -1,20 +1,20 @@
 <div class="heros-banner">
-<h1 >powAAAAAAA</h1>
-    <div class="search-bar">
-    <div class="container justify-content-center">
+<div><h1 >powAAAAAAA</h1></div>
     <div class="row">
-        <div class="col-12">
-            <div class="input-group mb-3"> <input type="text" class="form-control input-text " placeholder="Type in the power you're looking for..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <div class="input-group-append"> <button class="btn btn-outline-primary btn-lg" type="button"><i class="fa fa-search"></i></button> </div>
-            </div>
-        </div>
+      <div class="col-12">
+        <%= form_tag heros_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type in the power you want to acquire..."%>
+          <%= submit_tag "Search", class: "search-btn btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
-    </div>
-  </div>
   </div>
 
 <div class="hero-index-cards">
-  <% @heroes.each do |hero|%>
+  <% @heros.each do |hero|%>
     <div class="hero-card">
       <div class="hero-avatar d-flex justify-content-center align-items-end">
         <%# <%= cl_image_tag(hero.photo.key, :crop=>'fill') %>
