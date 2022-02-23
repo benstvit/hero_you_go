@@ -1,31 +1,34 @@
-
 <div class="container">
-
   <div class="row">
-
-    <div class="col-sm card-hero">
-      <div class='img' style='text-align:center;'> <%= cl_image_tag @hero.photo.key,
-           height: 370, width: 370,
-           :transformation=>[
-           {:aspect_ratio=>"1.0", :gravity=>"face", :width=>0.6, :zoom=>0.7, :crop=>"thumb"},
-           {:radius=>"max"},
-           {:color=>"white", :effect=>"outline"},
-           {:effect=>"shadow"}
-           ]%></div>
-      <h2><%= @hero.name %></h2>
-      <% @hero.powers.each do |power| %>
-      <div class="power"><p><%= power.power %></p></div>
-      <% end %>
+  <div class="col-sm">
+    <div class="card-hero-container">
+      <div class="hero-name"><%= @hero.name %></div>
+      <div class="card-hero-infos">
+        <div class="card-hero-infos-col">
+          <div class="card-hero-infos-powers">
+            <div class="card-hero-infos-powers-title">Powers</div>
+            <div class="card-hero-infos-powers-list">
+              <ul><% @hero.powers.each do |power| %>
+              <div><li><%= power.power %></li></div>
+              <% end %></ul>
+            </div>
+          </div>
+          <div class="card-hero-infos-price"><%= "€ #{@hero.price}/day" %></div>
+        <div class='img' style='text-align:center;'> <%= cl_image_tag @hero.photo.key,
+            height: 200, width: 200,
+            :transformation=>[
+              {:aspect_ratio=>"1.0", :gravity=>"face", :width=>0.6, :zoom=>0.7, :crop=>"thumb"},
+              {:radius=>"max"},
+              {:color=>"white", :effect=>"outline"},
+              {:effect=>"shadow"}
+            ]%>
+        </div>
+        </div>
+        <div class="card-hero-book-btn">Book a mission now!</div>
+        <br>
+      </div>
     </div>
-
-    <div class="col-sm"></div>
-
-    <div class="col-sm">
-      <h1><%= @hero.name %></h1>
-      <% @hero.powers.each do |power| %>
-      <h2><%= power.power %></h2>
-      <% end %>
-    </div>
-    <p><%= link_to 'Results', heros_path %></p>
+  </div>
+  <div class="col-sm"></div>
   </div>
 </div>

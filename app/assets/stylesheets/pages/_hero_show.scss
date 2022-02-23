@@ -1,13 +1,91 @@
-.card-hero{
-  background-color: #073B4C;
-  padding: 30px;
-  margin: 30px;
-  border-radius: 5px;
-  .img{
-    align-items: center;
+.card-hero-container{
+  .hero-name{
+      background-color: #06D6A0;
+      font-family: 'Shizuru', cursive;
+      color: white;
+      font-size: 40px;
+      // text-align: center;
+      border-radius: 5px 5px 0 0 ;
+      padding: 16px 40px 16px 40px;
+      margin: 50px 0 0 0;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
 
+  .card-hero-infos {
+    background: #073B4C;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 20px;
+    position: relative;
+    border-radius: 0 0 5px 5px;
+
+    .card-hero-infos-col{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin: 40px;
+
+      .card-hero-infos-powers{
+        position: relative;
+        background-color: whitesmoke;
+        padding: 40px 60px 0 0;
+        width: 250px;
+        font-family: 'Bebas Neue', cursive;
+        box-shadow: 0 0 30px grey;
+        font-size: 25px;
+
+        .card-hero-infos-powers-title{
+          position: absolute;
+          background-color: #EF476F;
+          color: white;
+          border: solid 5px whitesmoke;
+          font-size: 30px;
+          right: 111px;
+          top: -20px;
+          padding: 0 10px 0 10px;
+          font-family: 'Bebas Neue', cursive;
+        }
+      }
+      .card-hero-infos-price{
+        color: white;
+        font-size: 30px;
+        font-style: italic;
+        font-family: 'Bebas Neue', cursive;
+      }
+    }
+    .img{
+      position: absolute;
+      right: 120px;
+      top: -54px;
+      width: 40px;
+    }
+  }
+
+  .card-hero-book-btn{
+    background-color: #06D6A0;
+    font-family: 'Bebas Neue', cursive;
+    border-radius: 50px;
+    padding: 10px 40px 10px 40px;
+    color: whitesmoke;
+    font-size: 32px;
+    box-shadow: 0 0 30px grey;
+    right: 56px;
+    top: 275px;
+    text-align: center;
   }
 }
+
+
+
+
+// .card-hero{
+//   padding: 30px;
+//   // margin: 30px;
+//   border-radius: 0 0 5px 5px;
+//   .img{
+//     align-items: center;
+
+//   }
+// }
 
 .power{
   background-color: #06D6A0;
