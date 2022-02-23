@@ -12,6 +12,21 @@
   border: 1px solid #ffffff
 }
 
+.home-banner {
+  // background-image: url(../../images/pow.png);
+  background-color: #06d6a0;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-wrap: wrap;
+  height: 350px;
+  padding: 20px;
+  // box-shadow: 0px 0px 0px 5px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+  position: relative;
+}
+
 .home-banner h1 {
   font-family: 'Shizuru', cursive;
   font-size: 80px;

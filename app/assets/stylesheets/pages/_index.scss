@@ -1,3 +1,49 @@
 // Import page-specific CSS files here.
 @import "home";
-@import "hero_show"
+@import "hero_show";
+
+.hero-index-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  margin:30px 20px;
+  padding: 20px;
+  position: absolute;
+  bottom: -300px;
+}
+
+.hero-card {
+  border-radius: 50%;
+  background-color: rgb(131, 131, 131);
+  height: 300px;
+  width: 300px;
+  margin: 0;
+  margin-bottom: 10px;
+  border: 15px solid rgb(0, 0, 0);
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.hero-description {
+  text-align: center;
+  position: absolute;
+  bottom: 70px;
+  color: white;
+}
+
+.hero-rating {
+  position: absolute;
+  border-radius: 50%;
+  background-color:rgba($color: #ffffff, $alpha: 0.9);
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  border: 1px solid black;
+  bottom: -26px;
+  right: 10px;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+}
