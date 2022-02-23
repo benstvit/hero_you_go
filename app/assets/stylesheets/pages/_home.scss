@@ -34,5 +34,18 @@
   margin-bottom: 10px;
   border: 15px solid rgb(0, 0, 0);
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+  position: relative;
+}
 
+.hero-rating {
+  position: absolute;
+  border-radius: 50%;
+  background-color: #242424;
+  height: 100px;
+  width: 100px;
+  margin: 0;
+  border: 1px solid black;
+  bottom: -26px;
+  right: 10px;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
 }
