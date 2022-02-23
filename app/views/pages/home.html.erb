@@ -4,7 +4,7 @@
     <div data-controller="typed" >
     <h2 class= "typed-target" ></h2>
     </div>
-    <div class="row">
+    <div class="power-form row">
       <div class="col-8">
         <%= form_tag heros_path, method: :get do %>
           <%= text_field_tag :query,
@@ -29,9 +29,7 @@
       <div class="hero-avatar d-flex justify-content-center align-items-end">
         <div class="hero-img"><%= cl_image_tag(hero.photo.key) %></div>
         <div class="hero-description">
-
           <h2><%=hero.name%></h2>
-
         </div>
       </div>
       <div class="hero-rating d-flex justify-content-center align-items-center">
