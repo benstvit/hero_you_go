@@ -20,11 +20,11 @@
         <%# <%= cl_image_tag(hero.photo.key, :crop=>'fill') %>
         <div class="hero-description">
           <h2><%= link_to hero.name, hero_path(hero) %></h2>
-          <%# <h2><%= hero.power</h2> %>
+          <h2><%= hero.power</h2> %>
         </div>
       </div>
       <div class="hero-rating d-flex justify-content-center align-items-center">
-        <%# <p>5⭐ <%= @hero.review.rating %></p>
+        <%= @hero.rating %>
       </div>
     </div>
   <% end %>
