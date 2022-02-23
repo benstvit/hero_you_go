@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2022_02_22_162705) do
   create_table "missions", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
-    t.string "status"
+    t.string "status", default: "pending"
     t.string "location"
     t.text "content"
     t.string "title"
