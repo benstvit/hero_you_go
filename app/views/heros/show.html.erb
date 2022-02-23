@@ -15,13 +15,7 @@
           </div>
           <div class="card-hero-infos-price"><%= "€ #{@hero.price}/day" %></div>
         <div class='img' style='text-align:center;'> <%= cl_image_tag @hero.photo.key,
-            height: 200, width: 200,
-            :transformation=>[
-              {:aspect_ratio=>"1.0", :gravity=>"face", :width=>0.6, :zoom=>0.7, :crop=>"thumb"},
-              {:radius=>"max"},
-              {:color=>"white", :effect=>"outline"},
-              {:effect=>"shadow"}
-            ]%>
+            height: 200 %>
         </div>
         </div>
         <div class="card-hero-book-btn">Book a mission now!</div>
