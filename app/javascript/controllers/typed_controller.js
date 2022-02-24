@@ -4,14 +4,14 @@ export default class extends Controller {
 
   connect() {
 
-var options = {
-  strings: ['Their Super Powers...', 'are YOURS !'],
-  typeSpeed: 100,
-  showCursor: false,
-  loop: true
-};
+    let options = {
+      strings: ['Their Super Powers...', 'are YOURS !'],
+      typeSpeed: 100,
+      showCursor: false,
+      loop: true
+    };
 
-var typed = new Typed('.typed-target', options);
+    let typed = new Typed('.typed-target', options);
 
   }
 }

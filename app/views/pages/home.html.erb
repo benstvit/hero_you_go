@@ -1,8 +1,8 @@
 <%= render 'shared/banner' %>
 
   <div class="hero-cards">
-<% @heros.each do |hero|%>
-<%= link_to hero_path(hero) do%>
+<% @top_reviews.each do |review|%>
+<%= link_to hero_path(review) do%>
     <div class="hero-card">
         <div class="hero-img-background">
           <% hero.powers.each do |power| %>
@@ -13,7 +13,9 @@
         <h2>⭐</h2>
       </div>
       <div class="hero-avatar d-flex justify-content-center align-items-end">
-        <div class="hero-img"><%= cl_image_tag(hero.photo.key) %></div>
+        <% if review.hero.photo.attached? %>
+        <div class="hero-img"><%= cl_image_tag(review.hero.photo.key) %></div>
+        <% end %>
         <div class="hero-description">
           <%# <h2><%=hero.name</h2> %>
         </div>

@@ -12,17 +12,17 @@
       <div class="hero-avatar d-flex justify-content-center align-items-end">
         <div class="hero-img"><%=cl_image_tag(hero.photo.key)%></div>
         <div class="hero-description">
-          <%# <h2><%=hero.name</h2> %>
+          </div>
+          <div class="hero-rating d-flex justify-content-center align-items-center">
+          <% i = 0 %>
+          <% hero.reviews.each do |review| %>
+            <% i += review.rating %>
+          <% end %>
+          <h3><%= "⭐️"* (i.fdiv(hero.reviews.count))%></h3>
         </div>
-        <div class="hero-rating d-flex justify-content-center align-items-center">
-        <% i = 0 %>
-        <% hero.reviews.each do |review| %>
-          <% i += review.rating %>
-        <% end %>
-        <h3><%= "⭐️"* (i.fdiv(hero.reviews.count))%></h3>
-      </div>
-      </div>
-    </div>
     <% end %>
-  <% end %>
+  </div>
+
+  <div class="d-flex justify-content-center"><%= render 'shared/map', markers: @markers %> </div>
+
 </div>
