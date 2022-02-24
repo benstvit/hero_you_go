@@ -1,22 +1,22 @@
 <%= @heros.each do |hero|%>
-  <div class="card-hero-container flex-item">
-    <h2 class="title"><%= hero.name %></h2>
-    <div class="card-hero-infos">
-      <div class="card-hero-infos-col">
-        <div class="card-hero-infos-powers">
-          <div class="card-hero-infos-powers-title">Powers</div>
-          <div class="card-hero-infos-powers-list">
-            <ul><% hero.powers.each do |power| %>
-            <div><li><%= power.power %></li></div>
-            <% end %></ul>
-          </div>
+<div class="card-hero-container flex-item">
+  <h2 class="title"><%= hero.name %></h2>
+  <div class="card-hero-infos">
+    <div class="card-hero-infos-col">
+      <div class="card-hero-infos-powers">
+        <div class="card-hero-infos-powers-title">Powers</div>
+        <div class="card-hero-infos-powers-list">
+          <ul><% hero.powers.each do |power| %>
+          <div><li><%= power.power %></li></div>
+          <% end %></ul>
         </div>
-        <div class="card-hero-infos-price"><%= "€ #{hero.price}/day" %></div>
-      <div class='img' style='text-align:center;'> <%= cl_image_tag hero.photo.key,
-          height: 200 %>
       </div>
+      <div class="card-hero-infos-price"><%= "€ #{hero.price}/day" %></div>
+    <div class='img' style='text-align:center;'> <%= cl_image_tag hero.photo.key,
+        height: 200 %>
     </div>
-      <div class="card-hero-book-btn m-1"><%= link_to 'Edit Details', edit_hero_path(hero)%></div>
-      <div class="card-hero-book-btn m-1"><%= link_to 'Delete Hero', heros_path(hero), method: :delete%></div>
+  </div>
+    <div class="card-hero-book-btn m-1"><%= link_to 'Edit Details', edit_hero_path(hero)%></div>
+    <div class="card-hero-book-btn m-1"><%= link_to 'Delete Hero', heros_path(hero), method: :delete%></div>
   </div>
 <% end %>
