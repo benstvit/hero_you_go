@@ -3,12 +3,12 @@
   <div class="flex-container">
     <div class="card-hero-container flex-item m-2">
       <h2 class="title m-3">User Information:</h2>
-        <div class="infos">
+        <div class="infos mt-3">
           <ul style="color: white">
             <li>First Name: <%= current_user.first_name %></li>
             <li>Last Name: <%= current_user.last_name %></li>
             <li>Email: <%= current_user.email %></li>
-            <%= link_to 'Reset Password', edit_user_password_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
+            <%= link_to 'Reset Password', edit_user_password_path, class: "btn btn-primary mr-1 m-2", style: "margin-right: 5px" %>
           </ul>
         </div>
     </div>
