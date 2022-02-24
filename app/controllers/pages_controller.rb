@@ -7,6 +7,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    # @mission  = current_user.mission
+    @mission = Mission.find_by(user_id: current_user)
+    @hero = Hero.find_by(user_id: current_user)
   end
 end

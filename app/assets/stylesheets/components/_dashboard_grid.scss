@@ -1,0 +1,13 @@
+.item-header { grid-area: header; }
+.item-user { grid-area: user; }
+.item-mission { grid-area: mission; }
+.item-hero { grid-area: hero; }
+
+.dashboard-grid {
+  display: inline-grid;
+  gap: 100px 100px;
+  grid-template-areas:
+    'header header header header'
+    'user user mission misson'
+    'user user hero hero';
+}
