@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: :home
 
   def home
-    @top_reviews = Review.where(rating: 5)
+    @top_reviews = Review.order('rating DESC').first(4)
     @heros = Hero.all
   end
 
