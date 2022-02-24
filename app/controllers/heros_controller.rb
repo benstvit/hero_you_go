@@ -2,15 +2,24 @@ class HerosController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
+    # pg_search
     search = params[:query]
-
     if search.present?
       @heros = Hero.search_by_power_name_and_location(search)
     else
       @heros = Hero.all
     end
 
-    # pg_search (see lesson). Pg search scope for heros and associated_against powers. (check if heros belongs_to etc)
+    # geocoder
+    # the `geocoded` scope filters only heros with coordinates (latitude & longitude)
+    @markers = @heros.geocoded.map do |hero|
+      {
+        lat: hero.latitude,
+        lng: hero.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { hero: hero }),
+        image_url: helpers.asset_url("favicon.ico")
+      }
+    end
   end
 
   def show

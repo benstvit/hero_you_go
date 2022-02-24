@@ -49,8 +49,8 @@ urls = ['https://www.livreshebdo.fr/sites/default/files/assets/images/maxresdefa
 
 urls.each do |url|
   file = URI.open(url)
-
-  hero = Hero.new(name: Faker::Superhero.name, location: Faker::Address.city, price: rand(100..1000), user: User.all.sample)
+  cities = %w[Brussels Lisbon Madrid Paris Athens London Liege Namur Amsterdam Knokke Lille Tournai Tours Anvers]
+  hero = Hero.new(name: Faker::Superhero.name, location: cities.sample, price: rand(100..1000), user: User.all.sample)
 
   rand(2..6).times do
     hero.powers << Power.all.sample

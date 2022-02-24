@@ -1,0 +1,17 @@
+.map {
+  border: 12px solid white;
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 5px 15px 5px rgba(0,0,0,0.2);
+}
+
+.pop-img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.pop.pop-description h1 {
+  color: rgb(0, 0, 0)!important;
+  font-size: small;
+}
