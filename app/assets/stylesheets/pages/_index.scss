@@ -38,7 +38,6 @@
     a {
       text-decoration: none;
       color: white;
-
     }
 }
 
@@ -56,11 +55,29 @@
 }
 
 .hero-img {
+  // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path(hero.photo.key)%>')
   border-radius: 50%;
   height: 280px;
   width: 280px;
   overflow: hidden;
   display: flex;
   justify-content: center;
+}
 
+.hero-img-background {
+  padding: 50px 0 50px;
+  position: absolute;
+  background-color: black;
+  border-radius: 50%;
+  top: -15px;
+  left: -15px;
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  text-justify: center;
+  opacity: 0%;
+  font-family: 'Bebas Neue', cursive;
+  &:hover{
+    opacity: 70%;
+  }
 }
