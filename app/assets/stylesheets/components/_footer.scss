@@ -1,0 +1,27 @@
+.footer {
+  border-top: solid rgba(53, 53, 53, 0.507) 1px;
+  margin: 50px 50px 0 ;
+  background: #cdb4db;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100px;
+  padding: 20px 50px;
+  color: rgba(0,0,0,0.3);
+  font-family: 'Bebas Neue', cursive;
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links p {
+  color: rgba(0,0,0,0.3);
+  text-decoration: none;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}

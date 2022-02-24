@@ -4,10 +4,15 @@
   <% @heros.each do |hero|%>
   <%= link_to hero_path(hero) do%>
     <div class="hero-card">
+        <div class="hero-img-background">
+        <% hero.powers.each do |power| %>
+              <p><%= power.power %></p>
+            <% end %>
+        </div>
       <div class="hero-avatar d-flex justify-content-center align-items-end">
-        <div class="hero-img"><%= cl_image_tag(hero.photo.key) %></div>
+        <div class="hero-img"><%=cl_image_tag(hero.photo.key)%></div>
         <div class="hero-description">
-          <%# <h2><%=hero.name%></h2> %>
+          <%# <h2><%=hero.name</h2> %>
         </div>
         <div class="hero-rating d-flex justify-content-center align-items-center">
         <% i = 0 %>
@@ -17,7 +22,6 @@
         <h3><%= "⭐️"* (i.fdiv(hero.reviews.count))%></h3>
       </div>
       </div>
-
     </div>
     <% end %>
   <% end %>
