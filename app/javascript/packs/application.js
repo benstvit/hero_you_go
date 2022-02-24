@@ -16,6 +16,6 @@ ActiveStorage.start()
 import "controllers"
 import "bootstrap"
 
-// document.addEventListener('DOMContentLoaded', function() {
-//   flatpickr('.your-selector');
-// })
+document.addEventListener('DOMContentLoaded', function() {
+  flatpickr('.your-selector');
+})

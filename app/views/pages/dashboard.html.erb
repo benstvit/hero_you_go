@@ -18,10 +18,14 @@
   </div>
 
   <h2 class="title">Your current Superheo profile:</h2>
-  <% if @hero.present?  %>
-    <%= render "shared/hero_display", hero: @hero %>
-  <% else %>
-    <h2>Would you like to create your own Superhero?</h2>
-    <%= link_to 'Create Hero', new_hero_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
-  <% end  %>
+  <div class="flex-container">
+      <% if @heros.present?  %>
+        <%= render "shared/hero_display", heros: @heros %>
+      <% else %>
+        <h2>Would you like to create your own Superhero?</h2>
+        <%= link_to 'Create Hero', new_hero_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
+      <% end  %>
+  </div>
+
+  <%# <%= link_to 'Add a Review', new_hero_review_path(@hero), class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %> %>
 </div>
