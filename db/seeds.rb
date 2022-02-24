@@ -55,6 +55,8 @@ urls.each do |url|
   rand(2..6).times do
     hero.powers << Power.all.sample
   end
+
+
   review = Review.new(rating: rand(2..5), comment: comments.sample)
   review.hero = hero
   user_id_to_avoid = hero.user.id
