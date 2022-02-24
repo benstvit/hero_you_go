@@ -5,24 +5,23 @@
   <%= link_to hero_path(hero) do%>
     <div class="hero-card">
         <div class="hero-img-background">
-        <% hero.powers.each do |power| %>
+          <% hero.powers.each do |power| %>
               <p><%= power.power %></p>
-            <% end %>
+              <% end %>
         </div>
       <div class="hero-avatar d-flex justify-content-center align-items-end">
         <div class="hero-img"><%=cl_image_tag(hero.photo.key)%></div>
-        <div class="hero-description">
-          </div>
           <div class="hero-rating d-flex justify-content-center align-items-center">
-          <% i = 0 %>
-          <% hero.reviews.each do |review| %>
-            <% i += review.rating %>
-          <% end %>
+            <% i = 0 %>
+            <% hero.reviews.each do |review| %>
+              <% i += review.rating %>
+            <% end %>
           <h3><%= "⭐️"* (i.fdiv(hero.reviews.count))%></h3>
-        </div>
+          </div>
+      </div>
     <% end %>
-  </div>
+    </div>
 
-  <div class="d-flex justify-content-center"><%= render 'shared/map', markers: @markers %> </div>
-
+  <% end %>
 </div>
+  <div class="d-flex justify-content-center"><%= render 'shared/map', markers: @markers %> </div>

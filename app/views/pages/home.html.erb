@@ -2,13 +2,8 @@
 
   <div class="hero-cards">
 <% @top_reviews.each do |review|%>
-<%= link_to hero_path(review) do%>
+<%= link_to hero_path(review.hero) do%>
     <div class="hero-card">
-        <div class="hero-img-background">
-          <% hero.powers.each do |power| %>
-              <p><%= power.power %></p>
-          <% end %>
-        </div>
     <div class="top-hero d-flex justify-content-center align-items-center">
         <h2>⭐</h2>
       </div>
@@ -17,7 +12,6 @@
         <div class="hero-img"><%= cl_image_tag(review.hero.photo.key) %></div>
         <% end %>
         <div class="hero-description">
-          <%# <h2><%=hero.name</h2> %>
         </div>
       </div>
       <div class=" d-flex justify-content-center align-items-center">
