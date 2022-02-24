@@ -4,25 +4,24 @@
 
 .hero-index-cards {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
   width: 100%;
   height: 100%;
-  margin:30px 20px;
+  margin: -80px 20px 20px;
   padding: 20px;
-  position: absolute;
-  bottom: -400px;
 }
+
+
 
 .hero-card {
   border-radius: 50%;
   background-color: rgb(131, 131, 131);
   height: 300px;
   width: 300px;
-  margin: 0;
-  margin-bottom: 10px;
+  margin:0 0 10px;
   border: 15px solid rgb(255, 255, 255);
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
   position: relative;
@@ -39,7 +38,6 @@
     a {
       text-decoration: none;
       color: white;
-
     }
 }
 
@@ -50,18 +48,36 @@
   height: 100px;
   width: 100px;
   margin: 0;
-  border: 1px solid black;
+  // border: 1px solid white;
   bottom: -26px;
   right: 10px;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
 }
 
 .hero-img {
+  // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%=cl_image_path(hero.photo.key)%>')
   border-radius: 50%;
   height: 280px;
   width: 280px;
   overflow: hidden;
   display: flex;
   justify-content: center;
+}
 
+.hero-img-background {
+  padding: 50px 0 50px;
+  position: absolute;
+  background-color: black;
+  border-radius: 50%;
+  top: -15px;
+  left: -15px;
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  text-justify: center;
+  opacity: 0%;
+  font-family: 'Bebas Neue', cursive;
+  &:hover{
+    opacity: 70%;
+  }
 }
