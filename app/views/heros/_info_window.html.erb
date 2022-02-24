@@ -1,1 +1,7 @@
-<h1><%= hero.name %></h1>
+<div class="pop">
+  <div class="pop-description">
+    <h1><%=link_to hero.name, hero_path(hero), class:'' %></h1>
+  </div>
+  <div class="pop-img"><%= cl_image_tag(hero.photo.key, :transformation=>[
+  {:effect=>"cartoonify"}, {:width=>80, :height=>80, :crop=>"scale"}]) %></div>
+</div>
