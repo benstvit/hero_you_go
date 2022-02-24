@@ -1,35 +1,36 @@
-<div class="container">
-    <br>
+<div class="dashboard-grid">
+  <div class="item-header">
     <h1>Welcome to your dashboard <%= current_user.first_name %></h1>
-    <h2>User Information:</h2>
-    <ul>
-      <li>First Name: <%= current_user.first_name %></li>
-      <li>Last Name: <%= current_user.last_name %></li>
-      <li>Email: <%= @mission %></li>
-      <%= link_to 'Reset Password', edit_user_password_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
-    </ul>
-    <br>
-    <div class="container">
-<h1>Here are the details of your mission:</h1>
-  <div class="card-product">
-    <%= image_tag "OsirisDC.png", alt: "Osiris I Hero" %>
-    <div class="card-product-infos">
-      <h2><%= @mission.title %></h2>
-      <p><%= @mission.location %> <strong><%= @mission.hero.name %></strong> <%= @mission.start_date %></p>
+  </div>
+    <div class="item-user">
+        <div class="card-hero-container">
+          <h2 class="hero-name">User Information:</h2>
+            <div class="card-hero-infos">
+              <ul style="color: white">
+                <li>First Name: <%= current_user.first_name %></li>
+                <li>Last Name: <%= current_user.last_name %></li>
+                <li>Email: <%= current_user.email %></li>
+                <%= link_to 'Reset Password', edit_user_password_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
+              </ul>
+            </div>
+        </div>
     </div>
-    <button class="btn btn-primary mr-1" type="button" data-toggle="collapse" data-target="#collapsemissioncontent" aria-expanded="false" aria-controls="collapsemissioncontent">
-    Display Details
-  </button>
-    <%= link_to 'Edit Details', edit_mission_path(@mission), class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
-    <%= link_to 'Delete Mission', mission_path(@mission), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+  <div class="item-mission">
+      <h1>Here are the details of your current mission:</h1>
+        <% if @mission.present? %>
+          <%= render "shared/mission_details", mission: @mission %>
+        <% else %>
+          <h2>You have not current missions</h2>
+        <% end  %>
   </div>
-</div>
-<div class="collapse container" id="collapsemissioncontent">
-  <div class="card card-body">
-    <%= @mission.content %>
+    <div class="item-mission">
+        <% if @hero.present?  %>
+          <%= render "shared/hero_display", hero: @hero %>
+        <% else %>
+          <h2>Would you like to create your own Superhero?</h2>
+          <%= link_to 'Create Hero', new_hero_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
+        <% end  %>
+    </div>
+      <%= link_to 'Return Home', root_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
   </div>
-  </div>
-</div>
-    <%= link_to 'Create Hero', new_hero_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
-    <%= link_to 'Return Home', root_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
 </div>
