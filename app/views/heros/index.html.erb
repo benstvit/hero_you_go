@@ -1,23 +1,21 @@
 <%= render 'shared/banner_heros' %>
-<div class="index-container d-flex flex-column">
-  <div class="hero-index-cards">
-    <% @heros.each do |hero|%>
-    <%= link_to hero_path(hero) do%>
-      <div class="hero-card">
-        <div class="hero-avatar d-flex justify-content-center align-items-end">
-          <div class="hero-img"><%= cl_image_tag(hero.photo.key) %></div>
-          <div class="hero-description">
-          </div>
-          <div class="hero-rating d-flex justify-content-center align-items-center">
-          <% i = 0 %>
-          <% hero.reviews.each do |review| %>
-            <% i += review.rating %>
-          <% end %>
-          <h3><%= "⭐️"* (i.fdiv(hero.reviews.count))%></h3>
+
+<div class="hero-index-cards">
+  <% @heros.each do |hero|%>
+  <%= link_to hero_path(hero) do%>
+    <div class="hero-card">
+        <div class="hero-img-background">
+        <% hero.powers.each do |power| %>
+              <p><%= power.power %></p>
+            <% end %>
         </div>
+      <div class="hero-avatar d-flex justify-content-center align-items-end">
+        <div class="hero-img"><%=cl_image_tag(hero.photo.key)%></div>
+        <div class="hero-description">
+          <%# <h2><%=hero.name</h2> %>
         </div>
       </div>
-      <% end %>
+    </div>
     <% end %>
   </div>
 
