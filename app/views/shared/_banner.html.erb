@@ -1,0 +1,20 @@
+<div class="home-banner">
+  <div>
+    <h1>Hero You Go</h1>
+    <div data-controller="typed" >
+    <h2 class= "typed-target" ></h2>
+  </div>
+    <div class="power-form row">
+      <div class="col-8">
+        <span><%= form_tag heros_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type in a power, Hero or location"%></span>
+      </div>
+          <div class="col-4"><%= submit_tag "Give me this power !", class: "search-btn btn btn-primary" %></div>
+        <% end %>
+    </div>
+    </div>
+  </div>
+  </div>

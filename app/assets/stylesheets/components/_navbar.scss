@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: rgba($color: #06d6a0, $alpha: 1)
+  background: rgba($color: #06d6a0, $alpha: 1);
+  height: 100px;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -8,28 +11,30 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
+// .navbar-lewagon .navbar-brand img {
+//   width: 70px;
+// }
 
-.sign-in-btn {
-  background-color: #ffd166;
-  border-radius: 35%;
-  color: white;
+.navbar-btns {
+  // background-color: #ffd166;
+  // border-radius: 35%;
+  color: white!important;
   font-family: 'Bebas Neue', cursive;
   font-weight: 600;
+  font-size: 40px;
   text-transform: uppercase;
   padding: 20px auto;
   margin: 0 10px;
 }
 
-.log-in-btn {
-  background-color:#ef476f;
-  border-radius: 35%;
-  padding: 20px auto;
-  margin: 0 10px;
-  color: white;
+.navbar-btns:hover {
+  // background-color: #ffd166;
+  // border-radius: 35%;
+  color: rgba($color: #1b1b1b, $alpha: 0.7)!important;
   font-family: 'Bebas Neue', cursive;
   font-weight: 600;
+  font-size: 40px;
   text-transform: uppercase;
+  padding: 20px auto;
+  margin: 0 10px;
 }
