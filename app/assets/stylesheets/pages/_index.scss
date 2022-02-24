@@ -26,6 +26,9 @@
   border: 15px solid rgb(0, 0, 0);
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-description {
@@ -33,6 +36,11 @@
   position: absolute;
   bottom: 70px;
   color: white;
+    a {
+      text-decoration: none;
+      color: white;
+
+    }
 }
 
 .hero-rating {
@@ -46,4 +54,14 @@
   bottom: -26px;
   right: 10px;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+}
+
+.hero-img {
+  border-radius: 50%;
+  height: 280px;
+  width: 280px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+
 }

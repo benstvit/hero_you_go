@@ -1,31 +1,32 @@
 <div class="heros-banner">
-<h1 >powAAAAAAA</h1>
-    <div class="search-bar">
-    <div class="container justify-content-center">
+<div><h1 >powAAAAAAA</h1></div>
     <div class="row">
-        <div class="col-12">
-            <div class="input-group mb-3"> <input type="text" class="form-control input-text " placeholder="Type in the power you're looking for..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-                <div class="input-group-append"> <button class="btn btn-outline-primary btn-lg" type="button"><i class="fa fa-search"></i></button> </div>
-            </div>
-        </div>
+      <div class="col-12">
+        <%= form_tag heros_path, method: :get do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Search other power"%>
+          <%= submit_tag "Search", class: "search-btn btn btn-primary" %>
+        <% end %>
+      </div>
     </div>
-    </div>
-  </div>
   </div>
 
 <div class="hero-index-cards">
   <% @heros.each do |hero|%>
+  <%= link_to hero_path(hero) do%>
     <div class="hero-card">
       <div class="hero-avatar d-flex justify-content-center align-items-end">
-        <%# <%= cl_image_tag(hero.photo.key, :crop=>'fill') %>
+        <div class="hero-img"><%= cl_image_tag(hero.photo.key) %></div>
         <div class="hero-description">
-          <h2><%= link_to hero.name, hero_path(hero) %></h2>
-          <%# <h2><%= hero.power</h2> %>
+          <h2><%=hero.name%></h2>
         </div>
       </div>
       <div class="hero-rating d-flex justify-content-center align-items-center">
-        <%# <p>5⭐ <%= @hero.review.rating %></p>
-      </div>
+    <h3><%= rand(1..5) %></h3>
     </div>
+    </div>
+    <% end %>
   <% end %>
 </div>

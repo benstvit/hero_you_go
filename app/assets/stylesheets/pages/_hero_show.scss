@@ -72,12 +72,13 @@
     font-family: 'Bebas Neue', cursive;
     border-radius: 50px;
     padding: 10px 40px 10px 40px;
-    color: whitesmoke;
     font-size: 32px;
     box-shadow: 0 0 30px grey;
-    right: 56px;
-    top: 275px;
-    text-align: center;
+    a{
+      text-decoration: none;
+      text-align: center;
+      color: whitesmoke;
+    }
   }
 }
 
