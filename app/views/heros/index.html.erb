@@ -1,17 +1,4 @@
-<div class="heros-banner">
-<div><h1 >powAAAAAAA</h1></div>
-    <div class="row">
-      <div class="col-12">
-        <%= form_tag heros_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Search other power"%>
-          <%= submit_tag "Search", class: "search-btn btn btn-primary" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+<%= render 'shared/banner_heros' %>
 
 <div class="hero-index-cards">
   <% @heros.each do |hero|%>

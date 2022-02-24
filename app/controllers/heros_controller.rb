@@ -2,11 +2,15 @@ class HerosController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    if params[:query].present?
-      @heros = Hero.where("power ILIKE ?", "%#{params[:query]}%")
+    search = params[:query]
+
+    if search.present?
+      @heros = Hero.search_by_power_name_and_location(search)
     else
       @heros = Hero.all
     end
+
+    # pg_search (see lesson). Pg search scope for heros and associated_against powers. (check if heros belongs_to etc)
   end
 
   def show

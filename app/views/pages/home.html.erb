@@ -1,23 +1,4 @@
-<div class="home-banner">
-  <div>
-    <h1>Hero You Go</h1>
-    <div data-controller="typed" >
-    <h2 class= "typed-target" ></h2>
-    </div>
-    <div class="power-form row">
-      <div class="col-8">
-        <%= form_tag heros_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type in the power you want to acquire..."%>
-          <%= submit_tag "Search", class: "search-btn btn btn-primary" %>
-        <% end %>
-      </div>
-    </div>
-    </div>
-  </div>
-  </div>
+<%= render 'shared/banner' %>
 
   <div class="hero-cards">
 <% @heros.each do |hero|%>
@@ -29,11 +10,15 @@
       <div class="hero-avatar d-flex justify-content-center align-items-end">
         <div class="hero-img"><%= cl_image_tag(hero.photo.key) %></div>
         <div class="hero-description">
-          <h2><%=hero.name%></h2>
+          <%# <h2><%=hero.name</h2> %>
         </div>
       </div>
       <div class="hero-rating d-flex justify-content-center align-items-center">
-        <h3><%= rand(1..5) %></h3>
+        <% i = 0 %>
+        <% hero.reviews.each do |review| %>
+          <% i += review.rating %>
+        <% end %>
+        <h3><%= "⭐️"* (i.fdiv(hero.reviews.count))%></h3>
       </div>
     </div>
     <% end %>
