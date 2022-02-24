@@ -1,7 +1,7 @@
 <div class="container">
-<h1>Here are the details of your mission:</h1>
+<h2>Here are the details of your mission:</h2>
   <div class="card-product">
-    <%= image_tag "OsirisDC.png", alt: "Osiris I Hero" %>
+    <%= cl_image_tag @mission.hero.photo.key, height: 200 %>
     <div class="card-product-infos">
       <h2><%= @mission.title %></h2>
       <p><%= @mission.location %> <strong><%= @mission.hero.name %></strong> <%= @mission.start_date %></p>
