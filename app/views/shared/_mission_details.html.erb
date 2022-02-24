@@ -1,17 +1,32 @@
+<% if @mission.present? %>
   <div class="card-hero-container">
-    <div class='img' style='text-align:center;'> <%= cl_image_tag @mission.hero.photo.key, height: 200 %>
-    <div class="card-hero-infos">
+    <h2 class="title">Current mission:</h2>
+    <div class='img' style='text-align:center;'> <%= cl_image_tag @mission.hero.photo.key, height: 200 %></div>
+    <div class="infos">
       <h2><%= @mission.title %></h2>
       <p><%= @mission.location %> <strong><%= @mission.hero.name %></strong> <%= @mission.start_date %></p>
     </div>
     <button class="btn btn-primary mr-1" type="button" data-toggle="collapse" data-target="#collapsemissioncontent" aria-expanded="false" aria-controls="collapsemissioncontent">
-    Display Details
-  </button>
+      Display Details
+    </button>
     <%= link_to 'Edit Details', edit_mission_path(@mission), class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
     <%= link_to 'Delete Mission', mission_path(@mission), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
   </div>
-</div>
-<div class="collapse container" id="collapsemissioncontent">
-  <div class="card card-body">
-    <%= @mission.content %>
+  <div class="collapse container" id="collapsemissioncontent">
+    <div class="card card-body">
+      <%= @mission.content %>
+    </div>
   </div>
+  <% else %>
+  <div class="card-hero-container">
+    <h2 class="title">Current mission:</h2>
+    <div class="infos">
+        <h2 style="color: white">No current mission</h2>
+    </div>
+  </div>
+  <div class="collapse container" id="collapsemissioncontent">
+    <div class="card card-body">
+      <p>No details</p>
+    </div>
+  </div>
+<% end  %>

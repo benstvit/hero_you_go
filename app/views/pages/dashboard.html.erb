@@ -1,36 +1,27 @@
-<div class="dashboard-grid">
-  <div class="item-header">
-    <h1>Welcome to your dashboard <%= current_user.first_name %></h1>
-  </div>
-    <div class="item-user">
-        <div class="card-hero-container">
-          <h2 class="hero-name">User Information:</h2>
-            <div class="card-hero-infos">
-              <ul style="color: white">
-                <li>First Name: <%= current_user.first_name %></li>
-                <li>Last Name: <%= current_user.last_name %></li>
-                <li>Email: <%= current_user.email %></li>
-                <%= link_to 'Reset Password', edit_user_password_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
-              </ul>
-            </div>
+<div class="container">
+  <h1 class="title">Welcome!</h1>
+  <div class="flex-container">
+    <div class="card-hero-container flex-item">
+      <h2 class="title">User Information:</h2>
+        <div class="infos">
+          <ul style="color: white">
+            <li>First Name: <%= current_user.first_name %></li>
+            <li>Last Name: <%= current_user.last_name %></li>
+            <li>Email: <%= current_user.email %></li>
+            <%= link_to 'Reset Password', edit_user_password_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
+          </ul>
         </div>
     </div>
-  <div class="item-mission">
-      <h1>Here are the details of your current mission:</h1>
-        <% if @mission.present? %>
-          <%= render "shared/mission_details", mission: @mission %>
-        <% else %>
-          <h2>You have not current missions</h2>
-        <% end  %>
-  </div>
-    <div class="item-mission">
-        <% if @hero.present?  %>
-          <%= render "shared/hero_display", hero: @hero %>
-        <% else %>
-          <h2>Would you like to create your own Superhero?</h2>
-          <%= link_to 'Create Hero', new_hero_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
-        <% end  %>
+    <div class="flex-item">
+      <%= render "shared/mission_details", mission: @mission %>
     </div>
-      <%= link_to 'Return Home', root_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
   </div>
+
+  <h2 class="title">Your current Superheo profile:</h2>
+  <% if @hero.present?  %>
+    <%= render "shared/hero_display", hero: @hero %>
+  <% else %>
+    <h2>Would you like to create your own Superhero?</h2>
+    <%= link_to 'Create Hero', new_hero_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
+  <% end  %>
 </div>
