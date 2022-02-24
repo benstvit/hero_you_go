@@ -29,11 +29,15 @@
       <div class="hero-avatar d-flex justify-content-center align-items-end">
         <div class="hero-img"><%= cl_image_tag(hero.photo.key) %></div>
         <div class="hero-description">
-          <h2><%=hero.name%></h2>
+          <%# <h2><%=hero.name</h2> %>
         </div>
       </div>
       <div class="hero-rating d-flex justify-content-center align-items-center">
-        <h3><%= rand(1..5) %></h3>
+        <% i = 0 %>
+        <% hero.reviews.each do |review| %>
+          <% i += review.rating %>
+        <% end %>
+        <h3><%= "⭐️"* (i.fdiv(hero.reviews.count))%></h3>
       </div>
     </div>
     <% end %>
