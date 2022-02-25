@@ -10,13 +10,21 @@
               <% end %>
         </div>
       <div class="hero-avatar d-flex justify-content-center align-items-end">
-        <div class="hero-img"><%=cl_image_tag(hero.photo.key)%></div>
+        <% if hero.photo.attached? %>
+          <div class="hero-img"><%= cl_image_tag(hero.photo.key) %></div>
+        <% else %>
+          <div class="hero-img"><img src="https://images.emojiterra.com/twitter/v13.1/512px/1f9b8.png"></div>
+        <% end %>
           <div class="hero-rating d-flex justify-content-center align-items-center">
             <% i = 0 %>
-            <% hero.reviews.each do |review| %>
-              <% i += review.rating %>
+            <% if hero.reviews.empty? %>
+              <p><%='New hero'%></p>
+            <% else %>
+              <% hero.reviews.each do |review| %>
+                <% i += review.rating %>
+              <% end %>
+              <h3><%= "⭐️"* (i.fdiv(hero.reviews.count))%></h3>
             <% end %>
-          <h3><%= "⭐️"* (i.fdiv(hero.reviews.count))%></h3>
           </div>
       </div>
     <% end %>

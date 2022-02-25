@@ -51,19 +51,18 @@
         font-style: italic;
         font-family: 'Bebas Neue', cursive;
       }
-    }
-    .img{
-      position: absolute;
-      right: -65px;
-      top: -54px;
-      width: 200px;
-      height: 200px;
-      overflow: hidden;
-      border-radius: 50%;
-      border: solid white 5px;
-      display: flex;
-      justify-content: center;
-
+      .profile-pic{
+        position: absolute;
+        right: -65px;
+        top: -54px;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        border-radius: 50%;
+        border: solid white 5px;
+        display: flex;
+        justify-content: center;
+      }
     }
   }
 

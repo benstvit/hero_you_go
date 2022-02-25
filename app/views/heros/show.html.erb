@@ -14,8 +14,13 @@
             </div>
           </div>
           <div class="card-hero-infos-price"><%= "€ #{@hero.price}/day" %></div>
-        <div class='img' style='text-align:center;'> <%= cl_image_tag @hero.photo.key,
-            height: 200 %>
+          <div class="profile-pic" style='text-align:center;'>
+            <% if @hero.photo.attached? %>
+              <div><%= cl_image_tag @hero.photo.key%>
+            <% else %>
+              <div><img src="https://images.emojiterra.com/twitter/v13.1/512px/1f9b8.png" style='background-color: white'></div>
+            <% end %>
+          </div>
         </div>
         </div>
         <div class="card-hero-book-btn"><%= link_to 'Book a mission now!', new_hero_mission_path(@hero)%></div>
