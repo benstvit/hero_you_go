@@ -7,8 +7,7 @@ class ReviewsController < ApplicationController
   def create
     @hero = Hero.find(params[:hero_id])
     @review = Review.new(review_params)
-    @review.hero_id = @hero
-    @review.save
+    @review.hero = @hero
     if @review.save
       redirect_to dashboard_path
     else
