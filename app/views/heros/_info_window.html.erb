@@ -1,9 +1,9 @@
 <div class="pop">
-  <div class="pop-description">
+  <div class="pop-description d-flex align-items-center">
     <h1><%=link_to hero.name, hero_path(hero), class:'' %></h1>
   </div>
   <% if hero.photo.attached? %>
   <div class="pop-img"><%= cl_image_tag(hero.photo.key, :transformation=>[
-  {:effect=>"cartoonify"}, {:width=>80, :height=>80, :crop=>"scale"}]) %></div>
+  {:effect=>"cartoonify"}, {:width=>100, :height=>100, :crop=>"scale", :radius=> 50}]) %></div>
   <% end %>
 </div>

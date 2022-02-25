@@ -1,18 +1,38 @@
 <% if @mission.present? %>
-  <div class="card-hero-container">
+  <div class="card-hero-container mt-3">
     <h2 class="title">Current mission</h2>
     <div class='img m-2' style='text-align:center;'> <%= cl_image_tag @mission.hero.photo.key, height: 200 %></div>
-      <div class="infos d-flex justify-content-between align-items-center">
+      <div class="infos d-flex justify-content-between align-items-center p-4">
         <div class="mission-description">
           <h2><%= @mission.title %></h2>
           <h1><%= @mission.hero.name %></h1>
           <p><%= @mission.location %>  <%= @mission.start_date %></p>
         </div>
-        <div class="review-btn p-2">
-        <%= link_to new_hero_review_path(@mission.hero), class:'btn btn-success d-flex justify-content-center align-items-center' do  %>
-        <p>Mission Accomplished ?! <br> Review it here !</p>
+        <% if @mission.hero.reviews.empty? %>
+            <div class="review-btn p-2 d-flex justify-content-center align-items-center">
+                <%= link_to new_hero_review_path(@mission.hero), class:'btn btn-success' do  %>
+                <p>Mission Accomplished ?! <br> Review it here !</p>
+                <% end %>
+             </div>
+        <% else %>
+        <div class="review-summary text-center">
+            <div class="review-btn p-2 d-flex justify-content-center align-items-center">
+                    <%= link_to new_hero_review_path(@mission.hero), class:'btn btn-success' do  %>
+                    <p>Mission Accomplished ?! <br> Review it here !</p>
+                    <% end %>
+                </div>
+            <div class="rating"></div>
+            <% i = 0 %>
+             <% @mission.hero.reviews.each do |review| %>
+                <% i += review.rating %>
+              <p><em>"<%= review.comment %>"</em></p>
+              <% end %>
+              <h3><%= "⭐️"* (i.fdiv(@mission.hero.reviews.count))%></h3>
+            </div>
+
+            </div>
         <% end %>
-        </div>
+
       </div>
     <button class="btn btn-primary mr-1 mt-3 ml-0 p-2" type="button" data-toggle="collapse" data-target="#collapsemissioncontent" aria-expanded="false" aria-controls="collapsemissioncontent">
       Display Details
