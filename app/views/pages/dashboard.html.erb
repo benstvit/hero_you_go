@@ -1,26 +1,80 @@
 <div class="container">
-  <div class="flex-container">
-    <div class="card-hero-container flex-item m-2">
-      <h2 class="title m-3">User Information</h2>
-        <div class="infos mt-3">
-          <ul style="color: white">
-            <li>First Name <%= current_user.first_name %></li>
-            <li>Last Name <%= current_user.last_name %></li>
-            <li>Email <%= current_user.email %></li>
+  <div class="row">
+    <div class="col-6">
+      <div class="user-card">
+        <h2>User Information</h2>
+        <div class="user-card-infos">
+            <p>👤 <%= "#{current_user.first_name} #{current_user.last_name}"%></p>
+            <p>💌 <%= current_user.email %></p>
             <%= link_to 'Reset Password', edit_user_password_path, class: "btn btn-primary mr-1 m-2", style: "margin-right: 5px" %>
-          </ul>
+          <%= link_to 'Create Hero', new_hero_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
         </div>
+      </div>
     </div>
-    <div class="flex-item">
-      <%= render "shared/mission_details", mission: @mission %>
+    <div class="col-6">
+      <div class="mission-title"><h2><%= "Your ongoing missions"%></h2></div>
+      <div class="mission-card">
+      <% if @mission.present? %>
+      <div class="img-hero">
+            <% if @mission.hero.photo.attached? %>
+              <%= cl_image_tag @mission.hero.photo.key%>
+            <% else %>
+              <img src="https://images.emojiterra.com/twitter/v13.1/512px/1f9b8.png">
+            <% end %>
+      </div>
+      <div class="mission-card-infos">
+        <div class="mission-card-infos-details">
+        <div class="mission-card-infos-title"><%=@mission.title%></div>
+        <div class="mission-details">
+          <p><%= "🎯 #{@mission.content}"%></p>
+          <p><%= "🌏 #{@mission.location}"%></p>
+          <p><%= "🦸 #{@mission.hero.name}"%></p>
+          <p><%= "📆 #{@mission.start_date} - #{@mission.end_date}"%></p>
+        </div>
+      </div>
     </div>
+      <%= link_to new_hero_review_path(@mission.hero), class:'btn btn-success' do  %>
+      <p>Mission Accomplished ?! <br> Review it here !</p>
+      <% end %>
+      <%= link_to 'Delete Mission', mission_path(@mission), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary mt-3 p-2" %>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="card-hero-container mt-3">
+
+
+      <div class="infos d-flex justify-content-between align-items-center p-4">
+
+
+
+      </div>
+
   </div>
 
-  <h2 class="title">Your current Superheo profile</h2>
-  <% if @hero.present?  %>
-    <%= render "shared/hero_display", hero: @hero %>
   <% else %>
-    <div class="m-3"><h2>Would you like to create your own Superhero?</h2></div>
-    <%= link_to 'Create Hero', new_hero_path, class: "btn btn-primary mr-1", style: "margin-right: 5px; margin-left: 5px;" %>
-  <% end  %>
+<h2>No current mission</h2>
+
+<% end  %>
+
+    </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+
+  </div>
+
+
+
 </div>
