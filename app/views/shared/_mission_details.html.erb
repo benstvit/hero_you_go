@@ -1,6 +1,6 @@
 <% if @mission.present? %>
   <div class="card-hero-container">
-    <h2 class="title">Current mission:</h2>
+    <h2 class="title">Current mission</h2>
     <div class='img m-2' style='text-align:center;'> <%= cl_image_tag @mission.hero.photo.key, height: 200 %></div>
       <div class="infos d-flex justify-content-between align-items-center">
         <div class="mission-description">

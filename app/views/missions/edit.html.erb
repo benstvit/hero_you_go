@@ -1,9 +1,10 @@
-<h1>Edit you mission:</h1>
-<%= simple_form_for(@mission) do |f| %>
-  <%= f.input :title %>
-  <%= f.input :location %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :content %>
-  <%= f.submit "Edit mission", class: "btn btn-primary" %>
-<% end %>
+<div class="review-container p-4">
+  <%= simple_form_for(@mission) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :location %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :content %>
+    <%= f.submit "Edit mission", class: "btn btn-primary" %>
+  <% end %>
+</div>
