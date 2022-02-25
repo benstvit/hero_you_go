@@ -27,10 +27,10 @@
   margin: 0 10px;
 }
 
-.navbar-btns:hover {
+.navbar-btns-active{
   // background-color: #ffd166;
   // border-radius: 35%;
-  color: rgba($color: #1b1b1b, $alpha: 0.7)!important;
+  color: rgb(0, 0, 0)!important;
   font-family: 'Bebas Neue', cursive;
   font-weight: 600;
   font-size: 40px;
@@ -39,7 +39,7 @@
   margin: 0 10px;
 }
 
-.navbar-btns:active {
+.navbar-btns:hover {
   // background-color: #ffd166;
   // border-radius: 35%;
   color: rgba($color: #1b1b1b, $alpha: 0.7)!important;

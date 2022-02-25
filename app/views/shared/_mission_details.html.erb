@@ -5,11 +5,13 @@
       <div class="infos d-flex justify-content-between align-items-center">
         <div class="mission-description">
           <h2><%= @mission.title %></h2>
-          <p><strong><%= @mission.hero.name %></strong></p>
+          <h1><%= @mission.hero.name %></h1>
           <p><%= @mission.location %>  <%= @mission.start_date %></p>
         </div>
         <div class="review-btn p-2">
-        <%= link_to 'Mission Accomplished?! Review this mission', new_hero_review_path(@mission.hero), class:'btn btn-success'  %>
+        <%= link_to new_hero_review_path(@mission.hero), class:'btn btn-success d-flex justify-content-center align-items-center' do  %>
+        <p>Mission Accomplished ?! <br> Review it here !</p>
+        <% end %>
         </div>
       </div>
     <button class="btn btn-primary mr-1 mt-3 ml-0 p-2" type="button" data-toggle="collapse" data-target="#collapsemissioncontent" aria-expanded="false" aria-controls="collapsemissioncontent">
