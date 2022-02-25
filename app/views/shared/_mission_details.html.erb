@@ -1,7 +1,14 @@
 <% if @mission.present? %>
   <div class="card-hero-container mt-3">
     <h2 class="title">Current mission</h2>
-    <div class='img m-2' style='text-align:center;'> <%= cl_image_tag @mission.hero.photo.key, height: 200 %></div>
+    <div class='img m-2' style='text-align:center; height: 200'>
+    <% if @mission.hero.photo.attached? %>
+      <%= cl_image_tag @mission.hero.photo.key %>
+    <% else %>
+      <img src="https://images.emojiterra.com/twitter/v13.1/512px/1f9b8.png">
+    <% end %>
+    </div>
+
       <div class="infos d-flex justify-content-between align-items-center p-4">
         <div class="mission-description">
           <h2><%= @mission.title %></h2>
