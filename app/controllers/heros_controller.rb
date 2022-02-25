@@ -24,6 +24,13 @@ class HerosController < ApplicationController
 
   def show
     @hero = Hero.find(params[:id])
+    @markers =
+      {
+        lat: @hero.latitude,
+        lng: @hero.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { hero: @hero }),
+        image_url: helpers.asset_url("favicon.ico")
+      }
   end
 
   def new

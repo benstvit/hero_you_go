@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-  <div class="col-sm">
+  <div class="col-6">
     <div class="card-hero-container">
-      <div class="hero-name"><%= @hero.name %></div>
+      <div class="hero-name"><h1><%= @hero.name %></div></h1>
       <div class="card-hero-infos">
         <div class="card-hero-infos-col">
           <div class="card-hero-infos-powers">
@@ -14,8 +14,13 @@
             </div>
           </div>
           <div class="card-hero-infos-price"><%= "€ #{@hero.price}/day" %></div>
-        <div class='img' style='text-align:center;'> <%= cl_image_tag @hero.photo.key,
-            height: 200 %>
+          <div class="profile-pic" style='text-align:center;'>
+            <% if @hero.photo.attached? %>
+              <div><%= cl_image_tag @hero.photo.key%>
+            <% else %>
+              <div><img src="https://images.emojiterra.com/twitter/v13.1/512px/1f9b8.png" style='background-color: white'></div>
+            <% end %>
+          </div>
         </div>
         </div>
         <div class="card-hero-book-btn"><%= link_to 'Book a mission now!', new_hero_mission_path(@hero)%></div>
@@ -23,6 +28,7 @@
       </div>
     </div>
   </div>
-  <div class="col-sm"></div>
+  <div class="col-6 d-flex justify-content-between"></div>
+    <div class=""><%= render 'shared/map_show', markers: @markers %> </div>
   </div>
 </div>
