@@ -11,8 +11,8 @@
           <% end %></ul>
         </div>
       </div>
-      <div class="card-hero-infos-price"><%= "€ #{hero.price}/day" %></div>
-    <div class='img' style='text-align:center;'> <%= cl_image_tag hero.photo.key,
+      <div class="card-hero-infos-price"><%= "€ #{@hero.price}/day" %></div>
+    <div class='img' style='text-align:center;'> <%= cl_image_tag @hero.photo.key,
         height: 200 %>
     </div>
   </div>
