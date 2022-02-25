@@ -7,7 +7,6 @@
     padding: 16px 40px 16px 40px;
     margin: 50px 0 0 0;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    gap: 20px
 }
 .card-hero{
   background: #073B4C;
@@ -72,5 +71,17 @@
       text-align: center;
       color: whitesmoke;
     }
+  }
+}
+
+.reviews{
+  display: block;
+  margin: 50px 10px 10px;
+  border-radius: 5px;
+  p{
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    padding: 20px 20px 0;
+    font-style: italic;
   }
 }
