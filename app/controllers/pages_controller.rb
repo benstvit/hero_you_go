@@ -9,5 +9,6 @@ class PagesController < ApplicationController
   def dashboard
     @mission = Mission.find_by(user_id: current_user)
     @heros = Hero.where(user_id: current_user)
+    @reviews = Review.all
   end
 end

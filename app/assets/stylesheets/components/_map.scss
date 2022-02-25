@@ -17,7 +17,28 @@
   height: 35px;
 }
 
-.pop.pop-description h1 {
+.pop-description h1 a {
   color: rgb(0, 0, 0)!important;
-  font-size: small;
+  text-decoration: none;
+  border: none;
+  outline: none;
+}
+
+.mapboxgl-popup-content {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  position: relative;
+  border: 10px solid black;
+  background: #f9f9f9;
+  opacity: 80%;
+  padding: 10px 10px 15px;
+  pointer-events: auto;
+  color: white;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.39);
 }
