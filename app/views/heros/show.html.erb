@@ -26,9 +26,9 @@
       <div class="hero-map"><%= render 'shared/map_show', markers: @markers %> </div>
     </div>
     <div class="reviews">
+        <h2><%="What our customers say about #{@hero.name}"%></h2>
       <% @hero.reviews.each do |review| %>
-        <h2><%="What our customers say about #{@hero.name} - "%><%= "⭐️" * review.rating %></h2>
-        <p><%= "\"#{review.comment}\"" %></p>
+        <p><%= "\"#{review.comment}\" -  "%><%= "⭐️" * review.rating %> </p>
       <% end %>
     </div>
   </div>
