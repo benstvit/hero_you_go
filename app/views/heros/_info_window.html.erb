@@ -4,6 +4,6 @@
   </div>
   <% if hero.photo.attached? %>
   <div class="pop-img"><%= cl_image_tag(hero.photo.key, :transformation=>[
-  {:effect=>"cartoonify"}, {:width=>100, :height=>100, :crop=>"scale", :radius=> 50}]) %></div>
+  {:effect=>"cartoonify"}, {:width=>80, :height=>80, :crop=>"fill", :radius=> 50}]) %></div>
   <% end %>
 </div>
