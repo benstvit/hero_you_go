@@ -27,6 +27,7 @@ class MissionsController < ApplicationController
   end
 
   def show
+    @mission = Mission
   end
 
   def destroy

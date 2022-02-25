@@ -6,7 +6,7 @@ export default class extends Controller {
 
     let options = {
       strings: ['Their Super Powers...', 'are YOURS !'],
-      typeSpeed: 100,
+      typeSpeed: 80,
       showCursor: false,
       loop: true
     };
