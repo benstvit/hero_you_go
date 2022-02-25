@@ -8,10 +8,30 @@
           <h1><%= @mission.hero.name %></h1>
           <p><%= @mission.location %>  <%= @mission.start_date %></p>
         </div>
-        <div class="review-btn p-2">
-        <%= link_to new_hero_review_path(@mission.hero), class:'btn btn-success d-flex justify-content-center align-items-center' do  %>
-        <p>Mission Accomplished ?! <br> Review it here !</p>
-        <% end %>
+        <% if hero.reviews.empty? %>
+            <div class="review-btn p-2 d-flex justify-content-center align-items-center">
+                <%= link_to new_hero_review_path(@mission.hero), class:'btn btn-success' do  %>
+                <p>Mission Accomplished ?! <br> Review it here !</p>
+                <% end %>
+             </div>
+        <% else %>
+        <div class="review-summary">
+            <div class="rating"></div>
+              <% hero.reviews.each do |review| %>
+                <% i += review.rating %>
+              <% end %>
+              <h3><%= "⭐️"* (i.fdiv(hero.reviews.count))%></h3>
+          </div>
+            <% end %>
+        <% if @mission.hero.review? %>
+          <div class="review-summary">
+            <div class="rating"></div>
+          </div>
+        <% else %>
+        <div class="review-btn p-2 d-flex justify-content-center align-items-center">
+          <%= link_to new_hero_review_path(@mission.hero), class:'btn btn-success' do  %>
+          <p>Mission Accomplished ?! <br> Review it here !</p>
+          <% end %>
         </div>
       </div>
     <button class="btn btn-primary mr-1 mt-3 ml-0 p-2" type="button" data-toggle="collapse" data-target="#collapsemissioncontent" aria-expanded="false" aria-controls="collapsemissioncontent">
