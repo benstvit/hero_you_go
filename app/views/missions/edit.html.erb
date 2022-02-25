@@ -2,8 +2,10 @@
   <%= simple_form_for(@mission) do |f| %>
     <%= f.input :title %>
     <%= f.input :location %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
+    <div data-controller="flatpickr">
+      <%= f.input :start_date, as: :string, input_html: { class: "flatpickr-input" } %>
+      <%= f.input :end_date, as: :string, input_html: { class: "flatpickr-input" } %>
+    </div>
     <%= f.input :content %>
     <%= f.submit "Edit mission", class: "btn btn-primary" %>
   <% end %>

@@ -1,13 +1,18 @@
 <div class="review-container p-4">
+<<<<<<< HEAD
+    <h2>New Mission Details:</h2>
+=======
   <%# <div id='mission-booking-dates' data-unavailable="<%= @mission.unavailable_dates.to_json %>
     <h2>New Mission Details</h2>
+>>>>>>> master
       <%= simple_form_for [ @hero, @mission ] do |f| %>
         <%= f.input :title %>
         <%= f.input :location %>
-        <%= f.input :start_date, as: :string, type: :text %>
-        <%= f.input :end_date, as: :string, type: :text %>
+        <div data-controller="flatpickr">
+          <%= f.input :start_date, as: :string, input_html: { class: "flatpickr-input" } %>
+          <%= f.input :end_date, as: :string, input_html: { class: "flatpickr-input" } %>
+        </div>
         <%= f.input :content %>
         <%= f.submit "Submit mission", class: "btn btn-primary" %>
       <% end %>
-  </div>
 </div>

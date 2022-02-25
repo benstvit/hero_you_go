@@ -1,6 +1,7 @@
 .flex-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 
   .infos {
     background: #073B4C;
@@ -13,7 +14,10 @@
 
 .flex-item {
   width: 50%;
-  margin: 10px
+}
+
+.flex-item-hero {
+  width: 100%
 }
 
 

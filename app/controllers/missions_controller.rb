@@ -12,7 +12,7 @@ class MissionsController < ApplicationController
     @mission.hero_id = @hero.id
     @mission.save
     if @mission.save
-      redirect_to mission_path(@mission)
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -23,16 +23,16 @@ class MissionsController < ApplicationController
 
   def update
     @mission = Mission.update(mission_params)
-    redirect_to mission_path(@mission)
+    redirect_to dashboard_path
   end
 
   def show
-    @mission = Mission
+    @mission = Mission.find(params[:id])
   end
 
   def destroy
     @mission.destroy
-    redirect_to root
+    redirect_to dashboard_path
   end
 
   private
