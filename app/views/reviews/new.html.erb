@@ -1,5 +1,5 @@
-<div class="p-4">
-  <h1>Give a review for this mission</h1>
+<div class="review-container p-4">
+  <h2>Don't be scare to rate your Hero ! ⭐️</h2>
   <%= simple_form_for([@hero, @review]) do |f| %>
     <%= f.input :comment, as: :text %>
     <%= f.input :rating, collection: 1..5 %>
