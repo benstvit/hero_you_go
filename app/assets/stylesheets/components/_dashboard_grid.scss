@@ -1,27 +1,26 @@
-.flex-container {
-  display: flex;
-  justify-content: center;
-  // flex-direction: column;
-
-  .infos {
+.user-card{
+  h2{
+    background-color: #06D6A0;
+    font-family: 'Shizuru', cursive;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    border-radius: 5px 5px 0 0 ;
+    padding: 16px 40px 16px 40px;
+    margin: 50px 0 0 0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  }
+  .user-card-infos{
     background: #073B4C;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     padding: 20px;
     position: relative;
     border-radius: 0 0 5px 5px;
+    font-family: 'Bebas Neue', cursive;
   }
 }
 
-.flex-item {
-  width: 50%;
-}
-
-.flex-item-hero {
-  width: 100%
-}
-
-
-.title {
+.mission-title{
   background-color: #06D6A0;
   font-family: 'Shizuru', cursive;
   color: white;
@@ -29,6 +28,59 @@
   text-align: center;
   border-radius: 5px 5px 0 0 ;
   padding: 16px 40px 16px 40px;
+  margin: 50px 0 0 0;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 10px 0 0 0 !important;
 }
+.mission-card{
+  background: #073B4C;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  position: relative;
+  border-radius: 0 0 5px 5px;
+  .img-hero{
+    position: absolute;
+    right: -65px;
+    top: -54px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid white 5px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+  }
+  .mission-card-infos{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 40px;
+    .mission-card-infos-details{
+      position: relative;
+      background-color: whitesmoke;
+      padding: 40px 60px 0 0;
+      width: 400px;
+      font-family: 'Bebas Neue', cursive;
+      box-shadow: 0 0 30px grey;
+      font-size: 25px;
+        .mission-card-infos-title{
+          position: absolute;
+          background-color: #EF476F;
+          color: white;
+          border: solid 5px whitesmoke;
+          font-size: 30px;
+          right: 111px;
+          top: -20px;
+          padding: 0 10px 0 10px;
+          font-family: 'Bebas Neue', cursive;
+        }
+        .mission-details{
+          padding: 20px 20px 20px 40px;
+          p{
+            color: black;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
