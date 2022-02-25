@@ -1,7 +1,9 @@
 <div class="home-banner">
   <div>
     <h1>Powaaaaa</h1>
+    <% unless params[:query] == nil %>
     <p>Your results for "<%= params[:query] %>"</p>
+    <% end %>
   </div>
     <div class="power-form row">
       <div class="col-8">
