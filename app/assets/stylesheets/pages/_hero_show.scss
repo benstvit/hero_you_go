@@ -1,38 +1,46 @@
-.card-hero-container{
-  .hero-name{
-      background-color: #06D6A0;
-      font-family: 'Shizuru', cursive;
-      color: white;
-      font-size: 40px;
-      // text-align: center;
-      border-radius: 5px 5px 0 0 ;
-      padding: 16px 40px 16px 40px;
-      margin: 50px 0 0 0;
-      box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  }
-
-  .card-hero-infos {
-    background: #073B4C;
+.hero-name{
+    background-color: #06D6A0;
+    font-family: 'Shizuru', cursive;
+    color: white;
+    font-size: 40px;
+    border-radius: 5px 5px 0 0 ;
+    padding: 16px 40px 16px 40px;
+    margin: 50px 0 0 0;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    padding: 20px;
-    position: relative;
-    border-radius: 0 0 5px 5px;
-
-    .card-hero-infos-col{
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin: 40px;
-
-      .card-hero-infos-powers{
-        position: relative;
-        background-color: whitesmoke;
-        padding: 40px 60px 0 0;
-        width: 250px;
-        font-family: 'Bebas Neue', cursive;
-        box-shadow: 0 0 30px grey;
-        font-size: 25px;
-
+    gap: 20px
+}
+.card-hero{
+  background: #073B4C;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  position: relative;
+  border-radius: 0 0 5px 5px;
+  .img-hero{
+    position: absolute;
+    right: -65px;
+    top: -54px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid white 5px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+  }
+  .card-hero-infos{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 40px;
+    .card-hero-infos-powers{
+      position: relative;
+      background-color: whitesmoke;
+      padding: 40px 60px 0 0;
+      width: 250px;
+      font-family: 'Bebas Neue', cursive;
+      box-shadow: 0 0 30px grey;
+      font-size: 25px;
         .card-hero-infos-powers-title{
           position: absolute;
           background-color: #EF476F;
@@ -51,21 +59,7 @@
         font-style: italic;
         font-family: 'Bebas Neue', cursive;
       }
-      .profile-pic{
-        position: absolute;
-        right: -65px;
-        top: -54px;
-        width: 200px;
-        height: 200px;
-        overflow: hidden;
-        border-radius: 50%;
-        border: solid white 5px;
-        display: flex;
-        justify-content: center;
-      }
-    }
   }
-
   .card-hero-book-btn{
     background-color: #06D6A0;
     font-family: 'Bebas Neue', cursive;
@@ -78,15 +72,5 @@
       text-align: center;
       color: whitesmoke;
     }
-  }
-}
-
-.power{
-  background-color: #06D6A0;
-  padding: 0.5px 0px 0.5px 23px;
-  margin: 17px 17px 17px 0px;
-  border-radius: 50px;
-  p{
-    margin-top: 17px;
   }
 }

@@ -1,34 +1,29 @@
 <div class="container">
   <div class="row">
-  <div class="col-6">
-    <div class="card-hero-container">
-      <div class="hero-name"><h1><%= @hero.name %></div></h1>
-      <div class="card-hero-infos">
-        <div class="card-hero-infos-col">
+    <div class="col-6">
+      <div class="hero-name"><h1><%= @hero.name %></h1></div>
+      <div class="card-hero">
+        <div class="img-hero">
+              <% if @hero.photo.attached? %>
+                <%= cl_image_tag @hero.photo.key%>
+              <% else %>
+                <img src="https://images.emojiterra.com/twitter/v13.1/512px/1f9b8.png">
+              <% end %>
+        </div>
+        <div class="card-hero-infos">
           <div class="card-hero-infos-powers">
             <div class="card-hero-infos-powers-title">Powers</div>
-            <div class="card-hero-infos-powers-list">
-              <ul><% @hero.powers.each do |power| %>
-              <div><li><%= power.power %></li></div>
-              <% end %></ul>
-            </div>
+            <ul><% @hero.powers.each do |power| %>
+            <div><li><%= power.power %></li></div>
+            <% end %></ul>
           </div>
           <div class="card-hero-infos-price"><%= "€ #{@hero.price}/day" %></div>
-          <div class="profile-pic" style='text-align:center;'>
-            <% if @hero.photo.attached? %>
-              <div><%= cl_image_tag @hero.photo.key%>
-            <% else %>
-              <div><img src="https://images.emojiterra.com/twitter/v13.1/512px/1f9b8.png" style='background-color: white'></div>
-            <% end %>
-          </div>
-        </div>
         </div>
         <div class="card-hero-book-btn"><%= link_to 'Book a mission now!', new_hero_mission_path(@hero)%></div>
-        <br>
       </div>
     </div>
-  </div>
-  <div class="col-6 d-flex justify-content-between"></div>
-    <div class=""><%= render 'shared/map_show', markers: @markers %> </div>
+    <div class="col-6">
+      <div class="hero-map"><%= render 'shared/map_show', markers: @markers %> </div>
+    </div>
   </div>
 </div>
